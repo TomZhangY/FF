@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<import resource="Peripherals.xml" />
+
+	<bean id="vatTcpListener" class="org.tap.communication.tcp.TCPListener">
+		<constructor-arg index="0" ref="vatCommConfig"></constructor-arg>
+		<constructor-arg index="1" ref="HEXLengthReadLogic1"></constructor-arg>
+		<constructor-arg index="2" ref="HEXLengthWriteLogic1"></constructor-arg>
+		<property name="messageEncoding" value="UTF-8"></property>
+		<property name="threadPool" ref="vatThreadPool"></property>
+		<property name="receiver" ref="VATOperation"></property>
+		<property name="listenerInfo" ref="vatListenerInfo"></property>
+	</bean>
+
+<!--
+	<bean id="HEXLengthReadLogic1" class="org.tap.communication.logic.BCDLengthReadLogic" 
+		scope="prototype" /> <bean id="HEXLengthWriteLogic1" class="org.tap.communication.logic.BCDLengthWriteLogic" 
+		scope="prototype" />-->
+
+	 <bean id="HEXLengthReadLogic1" class="org.tap.communication.logic.HEXLengthReadLogic"
+		scope="prototype" />
+	<bean id="HEXLengthWriteLogic1" class="org.tap.communication.logic.HEXLengthWriteLogic"
+		scope="prototype" /> 
+
+	<bean id="vatListenerInfo" class="org.tap.communication.ListenerInfo">
+		<property name="address" value="0.0.0.0"></property>
+		<property name="port" value="${FF.VATPrinter.port}"></property>
+		<property name="clientName" value="VAT_FF"></property>
+	</bean>
+
+	<bean id="vatCommConfig" class="org.tap.communication.tcp.CommunicationConfigurator">
+		<property name="clientMaximum" value="10"></property>
+		<property name="tcpListenerSleepTime" value="50"></property>
+		<property name="tcpServerSleepTime" value="5000"></property>
+		<property name="timeout" value="10000"></property>
+	</bean>
+
+	<bean id="vatThreadPool" class="org.tap.communication.tcp.TCPListenerThreadPoolExecutor">
+		<!-- corePoolSize -->
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<!-- maximumPoolSize -->
+		<constructor-arg index="1" value="2"></constructor-arg>
+		<!-- keepAliveTime -->
+		<constructor-arg index="2" value="1"></constructor-arg>
+		<!-- time unit -->
+		<constructor-arg index="3"
+			value="#{T(java.util.concurrent.TimeUnit).HOURS}"></constructor-arg>
+		<!-- work queue -->
+		<constructor-arg index="4" ref="vatWorkQueue"></constructor-arg>
+		<property name="receiverExceptionHandler" ref="vatExceptionHandler"></property>
+	</bean>
+
+	<bean id="vatExceptionHandler" class="org.tap.operation.peripheral.ExceptionHandler"></bean>
+
+	<bean id="vatWorkQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg index="0" value="20"></constructor-arg>
+	</bean>
+
+
+	<bean id="VATOperation" class="org.tap.operation.peripheral.PeripheralsOperation">
+		<constructor-arg index="0" ref="PrinterController"></constructor-arg>
+	</bean>
+
+	<bean id="PrinterController" class="com.tap.printer.controller.PrinterController">
+		<constructor-arg ref="PeripheralsManagement" />
+	</bean>
+
+</beans>
+
+ 

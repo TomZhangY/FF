@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<import resource="FSCommunication.xml" />
+	<import resource="cupA8.xml"/>
+	
+	<bean id="OPOSPrinter" class="com.tap.printer.OPOSPrinter">
+		<constructor-arg index="0" ref="PrintConfig" />
+		<constructor-arg index="1" ref="PrinterService" />
+		
+		<property name="miyaFilepath" value="${FF.Payment.miya.TxnFilePath}"></property>
+		<property name="printMiya" value="${FF.VATPrinter.isPrinterMiYa}"></property>
+		<property name="vcNumberFilePath" value="./data/vcNumber.txt"></property>
+		<property name="printVC" value="${FF.VATPrinter.isPrintVC}"></property>
+	    
+		<property name="vcDataOperation" ref="vcDataOperation"></property>
+		<property name="txnDataOperation"  ref="UpdateTransactionDataOperation"></property>
+		
+		<!-- if ecard config not setting ,is close ecard function -->
+		<property name="eCardConfig"  ref="ECardConfig"></property>
+		<property name="ecardConfigFile"   value="./conf/EFTGateway.properties"></property>
+		
+		<property name="lastTicketFilePath"  value="${FF.VATPrinter.lastTicketFilePath}"></property>
+		<property name="cupA8EFT"  ref="cupPayment"></property>
+		
+		<property name="bitLength" value="${FF.PrintQrCodeUrl.PrintUrl.bitLength}"></property>
+		<property name="ENCODING" value="${FF.PrintQrCodeUrl.PrintUrl.ENCODING}"></property>
+		<property name="password" value="${FF.PrintQrCodeUrl.PrintUrl.password}"></property>
+		
+		<property name="sendEticketXml" value="${FF.SendETicketXml}"></property>
+		<property name="printMessageFilePath" value="${FF.VATPrinter.printMessage}"></property>
+	</bean>
+	
+	<!-- if ecard config not setting ,is close ecard function -->
+	<bean id="ECardConfig" class="org.tap.operation.crm.ECardConfig">
+		<property name="appIdCouponCenter"  value="${FF.ECard.Server.appIdCouponCenter}"></property>
+		<property name="certiIdCouponCenter"  value="${FF.ECard.Server.certiIdCouponCenter}"></property>
+		<property name="checkQRCodeUrl"  value="${FF.ECard.Server.checkQRCodeUrl}"></property>
+		<property name="newEcardFromPOSURL"  value="${FF.ECard.Server.newEcardFromPOSURL}"></property>
+		<property name="confirmVchrForDiscountUrl"  value="${FF.ECard.Server.confirmVchrForDiscountUrl}"></property>
+		
+		<property name="appId"  value="${FF.ECard.Server.appId}"></property>
+		<property name="certiId"  value="${FF.ECard.Server.certiId}"></property>
+		
+		<property name="retryErrorCode"  value="${FF.ECard.Server.retryErrorCode}"></property>
+		<property name="retryCount"  value="${FF.ECard.Server.retryCount}"></property>
+		<property name="interval"  value="${FF.ECard.Server.interval}"></property>
+		<property name="sendFaileFilePath"  value="${FF.ECard.Server.sendFaileFilePath}"></property>
+	</bean>
+	
+	<bean id="UpdateTransactionDataOperation"   class="org.tap.operation.txndata.UpdateTransactionDataOperation"   >
+		<constructor-arg index="0" ref="TCPAccessOperation"> </constructor-arg>
+		<property name="uploadFailPath" value="${FF.Payment.miya.uploadFailPath}"></property>
+	</bean>
+	
+	<bean id="vcDataOperation" class="org.tap.operation.txndata.VCDataOperation">
+		<constructor-arg index="0" ref="TCPAccessOperation"> </constructor-arg>
+		<property name="uploadVC" value="${FF.VATPrinter.isPrintVC}"></property>
+	</bean>
+
+	<bean id="PrinterService" class="com.tap.printer.service.PrinterService">
+		<constructor-arg index="0" ref="templatePares" />
+		<constructor-arg index="1" ref="PrinterAction" />
+		<property name="jpgConfig"  ref="JPGConfig" />
+	</bean>
+	<bean id="JPGConfig" class="com.tap.printer.service.JPGConfig">	
+		<property name="retryCount" value="${FF.SendETicketXml.retryCount}"></property>
+		<property name="retryErrorCode" value="${FF.SendETicketXml.retryErrorCode}"></property>
+		<property name="interval"  value="${FF.SendETicketXml.interval}"></property>
+	
+		<property name="generateJPG" value="${FS.SendImage.generateJPG}"></property>
+		<property name="jpgFilePath" value="${FS.SendImage.jpgFilePath}"></property>
+		<property name="jpgSendFaile" value="${FS.SendImage.jpgSendFaile}"></property>
+		<property name="chatset" value="${FS.SendImage.chatset}"></property>
+		<property name="wechatInterfaceURL" value="${FS.SendImage.wechatInterfaceURL}"></property>
+		<property name="connectionTimeout" value="${FS.SendImage.connectionTimeout}"></property>
+		<property name="readTimeout" value="${FS.SendImage.readTimeout}"></property>
+		<property name="sysName" value="${FS.SendImage.sysName}"></property>
+		
+		<property name="channel" value="${FS.SendImage.channel}"></property>
+		<property name="openIdFile" value="${FS.SendImage.openIdFile}"></property>
+		
+	</bean>
+	<bean id="templatePares" class="org.tap.printtemplate.velocity.VelocityTemplate">
+		<constructor-arg index="0" ref="PrintConfig" />
+		<property name="encoding" value="GBK"></property>
+	</bean>
+
+	<bean id="PrintConfig" class="com.tap.printer.model.PrinterConfiguration" />
+
+	<bean id="PrinterTextAction" class="com.tap.printer.entry.PrinterTextAction">
+	</bean>
+	
+	<!-- <bean id="PrinterAction" class="com.tap.printer.entry.PrinterTextFileAction">
+		<constructor-arg index="0" value="./data/vatReceipt.txt"></constructor-arg>
+	</bean>-->
+	
+	<bean id="PrinterAction" class="com.tap.printer.entry.OposPrinterByCOM4J">
+		<constructor-arg index="0" ref="PrintConfig" />
+		<constructor-arg index="1" ref="expression" />
+	</bean> 
+	
+	<bean id="expression" class="com.tap.printer.entry.impl.ValueExpression">
+	</bean>
+</beans>
+

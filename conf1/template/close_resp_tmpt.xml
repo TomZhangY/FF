@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template Size="1" Name="Interface" Namespace="Esp" Version="1.0" URL="http://www.mosaicsoftware.com/Postilion/eSocket.POS/" SendOrder="Admin">
+	<!-- <Type Name="Admin" 
+		Attributes="TerminalId,
+					Action" >	
+		<Type Name="Props">		
+			<Type Name="Prop" Attributes="EventId,Type">
+				<Options EventId="UNSOLICITED_CARD_READ,CARD_INSERTED,REMOVE_CARD,PIN_ENTRY,DATA_REQUIRED" />
+			</Type>
+		</Type>			
+	</Type> -->
+	<Type Name="Admin" 
+		Attributes="Action,
+					ActionCode,
+					MessageReasonCode,
+					TerminalId" />
+</Template>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="SchedulerServer" class="org.tap.server.scheduler.SchedulerServer">
+		<property name="operations">
+			<list>
+				<ref bean="FileConsumerOperation"/>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="FileConsumerOperation" class="org.tap.operation.fileconsumer.FileConsumerOperation">
+		<constructor-arg index="0" value="${FF.Schedul.FileConsumer.filePath}"></constructor-arg>
+		<constructor-arg index="1" ref="FSCommunicationOperation"></constructor-arg>
+		<constructor-arg index="2" value="${FF.Schedul.FileConsumer.delay}"></constructor-arg>
+		<constructor-arg index="3" value="${FF.Schedul.FileConsumer.period}"></constructor-arg>
+	</bean>
+	
+	<bean id="FSCommunicationOperation" class="org.tap.communication.tcp.client.TCPAccessOperation">
+		<constructor-arg index="0" ref="BCDreadLogic"></constructor-arg>
+		<constructor-arg index="1" ref="BCDwriteLogic"></constructor-arg>
+		<property name="host" value="${FF.client.uploadFile.url}"></property>
+		<property name="port" value="${FF.client.uploadFile.port}"></property>
+		<property name="timeout" value="60000"></property>
+	</bean>
+	
+	<bean id="BCDreadLogic" class="org.tap.communication.logic.BCDLengthReadLogic"></bean>
+
+	<bean id="BCDwriteLogic" class="org.tap.communication.logic.BCDLengthWriteLogic"></bean>
+	
+	
+
+</beans>
+

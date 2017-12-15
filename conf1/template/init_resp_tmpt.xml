@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template Size="1" Name="Interface" Namespace="Esp" Version="1.0" URL="http://www.mosaicsoftware.com/Postilion/eSocket.POS/" SendOrder="Admin">
+	<Type Name="Admin" 
+		Attributes="Action,
+					ActionCode,
+					MessageReasonCode,
+					TerminalId" />		
+</Template>

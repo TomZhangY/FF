@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="FileConsumerTcpListener" class="org.tap.communication.tcp.TCPListener">
+		<constructor-arg index="0" ref="FileConsumerCommConfig"></constructor-arg>
+		<property name="messageEncoding" value="UTF-8"></property>
+		<property name="threadPool" ref="FileConsumerThreadPool"></property>
+		<property name="receiver" ref="FileConsumerOperation"></property>
+		<property name="listenerInfo" ref="FileConsumerListenerInfo"></property>
+	</bean>
+
+	<bean id="FileConsumerListenerInfo" class="org.tap.communication.ListenerInfo">
+		<property name="address" value="0.0.0.0"></property>
+		<property name="port" value="${FS.Server.uploadFile.port}"></property>
+		<property name="clientName" value="Upload_File"></property>
+	</bean>
+
+	<bean id="FileConsumerCommConfig" class="org.tap.communication.tcp.CommunicationConfigurator">
+		<property name="clientMaximum" value="10"></property>
+		<property name="tcpListenerSleepTime" value="50"></property>
+		<property name="tcpServerSleepTime" value="50"></property>
+		<property name="timeout" value="100000"></property>
+	</bean>
+
+	<bean id="FileConsumerThreadPool" class="org.tap.communication.tcp.TCPListenerThreadPoolExecutor">
+		<!-- corePoolSize -->
+		<constructor-arg index="0" value="1"></constructor-arg>
+		<!-- maximumPoolSize -->
+		<constructor-arg index="1" value="2"></constructor-arg>
+		<!-- keepAliveTime -->
+		<constructor-arg index="2" value="1"></constructor-arg>
+		<!-- time unit -->
+		<constructor-arg index="3"
+			value="#{T(java.util.concurrent.TimeUnit).HOURS}"></constructor-arg>
+		<!-- work queue -->
+		<constructor-arg index="4" ref="FileConsumerWorkQueue"></constructor-arg>
+		<property name="receiverExceptionHandler" ref="FileConsumerExceptionHandler"></property>
+	</bean>
+
+	<bean id="FileConsumerExceptionHandler" class="org.tap.operation.savefile.ExceptionHandler"></bean>
+
+	<bean id="FileConsumerWorkQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg index="0" value="20"></constructor-arg>
+	</bean>
+
+
+	<bean id="FileConsumerOperation" class="org.tap.operation.savefile.SaveFileOperation">
+		<constructor-arg index="0" value="./conf/EFTGateway.properties"></constructor-arg>
+		<property name="txnFilePath" value="${FS.Server.Printer.TxnFilePath}"></property>
+		
+	
+		<property name="dbDriver" value="${GetTenderId.DataSource.driverClass}" />
+		<property name="dbURL" value="${GetTenderId.DataSource.jdbcUrl}" />
+		<property name="dbUser" value="${GetTenderId.DataSource.user}" />
+		<property name="dbPassword" value="${GetTenderId.DataSource.password}" />
+		<property name="selectSQLByTenderId" value="${GetTenderId.DataSource.sql}" />
+	</bean>
+
+
+
+</beans>
+

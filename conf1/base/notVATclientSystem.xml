@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<import resource="communication.xml" />
+	<import resource="schedul.xml" />
+	
+	<import resource="keyboardhookServer.xml" />
+	
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>./conf/EFTGateway.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="alipayServer" class="org.tap.server.communication.CommunicationServer">
+		<property name="version" value="3.4.0"></property>
+		<constructor-arg index="0" ref="communicationManagement"></constructor-arg>
+	</bean>
+
+	<bean id="communicationManagement" class="org.tap.communication.CommunicationManagement">
+		<property name="listeners">
+			<array>
+				<ref bean="tcpListener" />
+			</array>
+		</property>
+	</bean>
+	
+	
+
+</beans>
+

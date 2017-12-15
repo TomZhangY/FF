@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="GB2312"?>
+<messages>
+	<message id="PromptDialog">
+		<msg key="RegistrationFirst">  请 扫 描 支 付 条 码  ...  </msg>
+		<msg key="JButton1">[C] 取消</msg>
+		<msg key="RefundRegistrationFirst">  请 扫 描 退 款 条 码  ...  </msg>
+	</message>
+	<message id="RefundPromptDialog">
+		<msg key="RegistrationFirst">  请 扫 描 退 款 条 码  ...  </msg>
+	</message>
+	<message id="CallAlipayDialog">
+		<msg key="RegistrationFirst">正在请求 , 请稍等...</msg>
+	</message>
+	<message id="CallActiveCardDialog">
+		<msg key="RegistrationFirst">激活操作进行中, 请耐心等待...</msg>
+	</message>
+	<message id="InvoiceInputDialog">
+		<msg key="InvoiceInputFirst">请输入撤销凭证号信息: </msg>
+		<msg key="txnDate">原交易日期: </msg>
+		<msg key="referenceNo">原交易参考号: </msg>
+		<msg key="Remark">  </msg>
+		<msg key="JButton1">[F1] 取消</msg>
+		<msg key="JButton2">[F5] 确认</msg> 
+		<!--Added by Roby.Ruan 2014-04-24 -->
+		<msg key="JButton3">  退出  </msg> 
+		<msg key="jButtonNum0"> 0 </msg>
+		<msg key="jButtonNum1"> 1 </msg>
+		<msg key="jButtonNum2"> 2 </msg>
+		<msg key="jButtonNum4"> 4 </msg>
+		<msg key="jButtonNum5"> 5 </msg>
+		<msg key="jButtonNum3"> 3 </msg>
+		<msg key="jButtonNum6"> 6 </msg>
+		<msg key="jButtonNum7"> 7 </msg>
+		<msg key="jButtonNum8"> 8 </msg>
+		<msg key="jButtonNum9"> 9 </msg>
+		<msg key="jBtnBackspace">← </msg>
+		<msg key="jBtnClear"> C </msg>
+		<!--Added by Roby.Ruan 2014-04-24 -->
+	</message>
+	<message id="InputBarcodeDialog">
+		<msg key="InvoiceInputFirst">请输入支付条形码信息: </msg>
+		<msg key="JLabel_Message">请输入撤销凭证号信息: </msg>
+		<msg key="txnDate">原交易日期: </msg>
+		<msg key="referenceNo">原交易参考号: </msg>
+		<msg key="Remark">  </msg>
+		<msg key="JButton1">[F1] 取消</msg>
+		<msg key="JButton2">[F5] 确认</msg> 
+		<!--Added by Roby.Ruan 2014-04-24 -->
+		<msg key="JButton3">  退出  </msg> 
+		<msg key="jButtonNum0"> 0 </msg>
+		<msg key="jButtonNum1"> 1 </msg>
+		<msg key="jButtonNum2"> 2 </msg>
+		<msg key="jButtonNum4"> 4 </msg>
+		<msg key="jButtonNum5"> 5 </msg>
+		<msg key="jButtonNum3"> 3 </msg>
+		<msg key="jButtonNum6"> 6 </msg>
+		<msg key="jButtonNum7"> 7 </msg>
+		<msg key="jButtonNum8"> 8 </msg>
+		<msg key="jButtonNum9"> 9 </msg>
+		<msg key="jBtnBackspace">← </msg>
+		<msg key="jBtnClear"> C </msg>
+		<!--Added by Roby.Ruan 2014-04-24 -->
+	</message>
+	
+	<message id="TransactionTypeDialog">
+		<msg key="JButton1">[F1] 移动支付</msg>
+		<msg key="JButton2">[F2] 银联支付</msg>		
+		<msg key="JButton3">[F3] 预付卡支付</msg>		
+		<msg key="JButton5">[F5]退出</msg>
+		<msg key="TransactionTypeFirst">请选择交易类型:</msg>
+		<msg key="Remark"></msg>
+	</message>
+	<isBalance>yes</isBalance>
+	<isRefund>yes</isRefund>
+	<isCloseKey>c</isCloseKey>
+	<isKeyboard>no</isKeyboard>
+	
+	<!-- new add -->
+	<timeOut>10</timeOut>
+	<borderColour>164,41,38</borderColour>
+	<bgColour>164,41,38</bgColour>
+	<centerColour>164,41,38</centerColour>
+	<buttonColour>123,132,132</buttonColour>
+</messages>

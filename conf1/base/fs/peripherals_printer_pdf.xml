@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="OPOSPrinter" class="com.tap.printer.OPOSPrinter">
+		<constructor-arg index="0" ref="PrintConfig" />
+		<constructor-arg index="1" ref="PrinterService" />
+		<property name="miyaFilepath" value="${FS.Server.Printer.TxnFilePath}"></property>
+		<property name="printMiya" value="${FS.Server.Printer.isPrintMiya}"></property>
+		<property name="vcNumberFilePath" value="./data/vcNumber_server.txt"></property>
+		<property name="printVC" value="true"></property>
+		<property name="FS" value="true"></property>
+	</bean>
+	
+	<bean id="PrintConfig" class="com.tap.printer.model.PrinterConfiguration" />
+
+	<bean id="PrinterService" class="com.tap.printer.service.PrinterService">
+		<constructor-arg index="0" ref="templatePares" />
+		<property name="printToPDF"  ref="PrinterPDF" />
+		<property name="jpgConfig"  ref="JPGConfig" />
+	</bean>
+
+	<bean id="templatePares" class="org.tap.printtemplate.velocity.VelocityTemplate">
+		<constructor-arg index="0" ref="PrintConfig" />
+		<property name="encoding" value="GBK"></property>
+	</bean>
+
+	<bean id="PrinterPDF" class="com.tap.print.pdf.entris.PrintTicket2CD_PDF">
+	</bean>
+	
+	<bean id="JPGConfig" class="com.tap.printer.service.JPGConfig">	
+		<property name="generateJPG" value="${FS.SendImage.generateJPG}"></property>
+		<property name="jpgFilePath" value="${FS.SendImage.jpgFilePath}"></property>
+		<property name="jpgSendFaile" value="${FS.SendImage.jpgSendFaile}"></property>
+		<property name="chatset" value="${FS.SendImage.chatset}"></property>
+		<property name="wechatInterfaceURL" value="${FS.SendImage.wechatInterfaceURL}"></property>
+		<property name="connectionTimeout" value="${FS.SendImage.connectionTimeout}"></property>
+		<property name="readTimeout" value="${FS.SendImage.readTimeout}"></property>
+		<property name="sysName" value="${FS.SendImage.sysName}"></property>
+	</bean>
+
+
+</beans>
+

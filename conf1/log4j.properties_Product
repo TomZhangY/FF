@@ -1,0 +1,83 @@
+log4j.rootLogger=INFO
+log4j.addivity.org.apache=true 
+log4j.addivity.org.tap.gc=true
+
+log4j.appender.CONSOLE=org.apache.log4j.ConsoleAppender
+log4j.appender.CONSOLE.Threshold=DEBUG
+log4j.appender.CONSOLE.Target=System.out
+log4j.appender.CONSOLE.layout=org.apache.log4j.PatternLayout
+log4j.appender.CONSOLE.layout.ConversionPattern=%d - %c -%-4r [%t] %-5p %c %x - %m%n 
+
+log4j.throwableRenderer=org.apache.log4j.EnhancedThrowableRenderer
+
+log4j.logger.System= DEBUG,System, CONSOLE
+log4j.logger.org.tap.server.scheduler= DEBUG,System, CONSOLE
+log4j.appender.System=org.apache.log4j.RollingFileAppender
+log4j.appender.System.File=log/system.log
+log4j.appender.System.MaxFileSize=5MB
+log4j.appender.System.MaxBackupIndex=10
+log4j.appender.System.layout=org.apache.log4j.PatternLayout
+log4j.appender.System.layout.ConversionPattern=%d [%30.30t] %-30.30c{1} %-5p %m%n
+
+log4j.logger.Communication= DEBUG,Communication
+log4j.logger.org.tap.communication.tcp.TCPListenerThreadPoolExecutor=DEBUG,Communication
+log4j.logger.org.tap.communication.tcp.TCPSender= DEBUG, Communication
+log4j.appender.Communication=org.apache.log4j.RollingFileAppender
+log4j.appender.Communication.File=log/communication.log
+log4j.appender.Communication.MaxFileSize=5MB
+log4j.appender.Communication.MaxBackupIndex=10
+log4j.appender.Communication.layout=org.apache.log4j.PatternLayout
+log4j.appender.Communication.layout.ConversionPattern=%d [%30.30t] %-30.30c{1} %-5p %m%n
+
+log4j.logger.org.springframework= DEBUG, spring
+log4j.appender.spring=org.apache.log4j.RollingFileAppender
+log4j.appender.spring.File=log/spring.log
+log4j.appender.spring.MaxFileSize=5MB
+log4j.appender.spring.MaxBackupIndex=10
+log4j.appender.spring.layout=org.apache.log4j.PatternLayout
+log4j.appender.spring.layout.ConversionPattern=%d [%30.30t] %-30.30c{1} %-5p %m%n
+
+log4j.logger.org.tap.operation.payment = DEBUG, Payment_Miya 
+log4j.logger.org.tap.operation.savefile = DEBUG, Payment_Miya
+log4j.logger.org.tap.server.scanner.plugin = DEBUG, Payment_Miya
+log4j.logger.org.tap.operation.crm = DEBUG, Payment_Miya
+log4j.logger.org.tap.ff.payment.miya = DEBUG, Payment_Miya
+log4j.logger.org.tap.ff.frame = DEBUG, Payment_Miya
+log4j.logger.org.tap.peripherals.support.scanner.opos = DEBUG, Payment_Miya
+log4j.logger.com.tap.peripheralsframework.support.scanner = DEBUG, Payment_Miya
+#log4j.logger.com.tap.peripheralsframework.support.serialport = DEBUG, Payment_Miya
+log4j.appender.Payment_Miya=org.apache.log4j.RollingFileAppender
+log4j.appender.Payment_Miya.File=.//log//Payment_Miya.log
+#log4j.appender.Payment_Miya.DatePattern=' 'yyyy-MM-dd'.LOG'  
+#log4j.appender.Payment_Miya.encoding=UTF-8
+#log4j.appender.Payment_Miya.Append=true
+log4j.appender.Payment_Miya.MaxFileSize=5MB
+log4j.appender.Payment_Miya.MaxBackupIndex=10
+log4j.appender.Payment_Miya.layout=org.apache.log4j.PatternLayout
+log4j.appender.Payment_Miya.layout.ConversionPattern=%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p %c %x - %m%n
+log4j.additivity.Payment_Miya= false
+
+log4j.logger.org.tap.operation.printer= DEBUG, Printer
+log4j.logger.com.tap.printer= DEBUG, Printer
+log4j.appender.Printer=org.apache.log4j.RollingFileAppender
+log4j.appender.Printer.File=.//log//Printer.log
+#log4j.appender.Printer.DatePattern=' 'yyyy-MM-dd'.LOG'  
+#log4j.appender.Printer.encoding=UTF-8
+#log4j.appender.Printer.Append=true
+log4j.appender.Printer.MaxFileSize=5MB
+log4j.appender.Printer.MaxBackupIndex=10
+log4j.appender.Printer.layout=org.apache.log4j.PatternLayout
+log4j.appender.Printer.layout.ConversionPattern=%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p %c %x - %m%n
+
+log4j.logger.org.tap.peripheralsframework.taxcontrol= DEBUG, taxcontrol
+#log4j.logger.com.tap.peripheralsframework.support.serialport= DEBUG, taxcontrol
+log4j.appender.taxcontrol=org.apache.log4j.RollingFileAppender
+log4j.appender.taxcontrol.File=.//log//taxcontrol.log
+#log4j.appender.taxcontrol.DatePattern=' 'yyyy-MM-dd'.LOG'  
+#log4j.appender.taxcontrol.encoding=UTF-8
+#log4j.appender.taxcontrol.Append=true
+
+log4j.appender.taxcontrol.MaxFileSize=5MB
+log4j.appender.taxcontrol.MaxBackupIndex=10
+log4j.appender.taxcontrol.layout=org.apache.log4j.PatternLayout
+log4j.appender.taxcontrol.layout.ConversionPattern=%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p %c %x - %m%n

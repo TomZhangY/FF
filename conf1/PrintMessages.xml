@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<REMA_XMLInterface>
+	<Header VersionId="10.1.0.57" CreationDate="2011-05-05">
+		<Package Id="17" DownloadType="6" SplitSupport="0"
+			SplitMaxRecordsInBatch="999999999" SplitStartingBatchNumber="1"
+			CreateAdditionalCodesAsIndependentItems="0"
+			SplitBatchNumberMaxDigits="3" SplitBatchType="GT"
+			SplitBatchNumberSequenceID="1" SplitBatchNumberSubSequenceID="1"
+			UniqueBatchNumber="437" CreateTprAsPromotion="0" BatchActivationType="1"
+			DepartmentLevelId="1" EffectiveDate="2011-05-05" />
+		<Source RetailerId="1" />
+		<Destination RetailerId="1" StoreId="1" />
+	</Header>
+	<Body>
+		<GeneralTables>
+			<Messages DownloadType="1">
+				<Document ToolType="Document" ToolId="Document" UID="2"
+					GroupBy="2" Name="TM Operator" Unit="px" Orientation="LeftToRight"
+					Width="810" Height="480" Margin-left="5" Margin-right="5"
+					Margin-top="5" Margin-bottom="5" DocumentType="15" Description="TM Operator"
+					DeviceType="11" Layout="Portrait" WorkinAreaWidth="800" UIZoom="100"
+					DeviceName="FullScreen800x600" CharacterMaximum="56" Id="1001"
+					TemplateLineId="1">
+					<Control IsPosObjectGlobal="1" ToolType="TextEditor_Rows"
+						ToolId="PromotionLevel" UID="3" IsPosUseGlobalFields="0" Position="Relative"
+						Width="100" Height="40" Top="5" Left="5" VAlign="Top" HAlign="Left"
+						Margin-left="0" Margin-right="0" Margin-top="0" Margin-bottom="0"
+						Border-Left-Width="0" Border-Left-Color="000000" Border-Top-Width="0"
+						Border-Top-Color="000000" Border-Right-Width="0"
+						Border-Right-Color="000000" Border-Bottom-Width="0"
+						Border-Bottom-Color="000000" UISelected="1" Id="2">
+						<Data Id="3">
+							<Language Id="English">
+								<Row Font="1" FontSize="56" Align="Left" Id="4">
+									<Text Text="*************************" Id="5" />
+								</Row>
+								<Row Font="1" FontSize="56" Align="Left" Id="6">
+									<Text Text="该会员卡尚未激活," Id="7" />
+								</Row>
+								<Row Font="1" FontSize="56" Align="Left" Id="8">
+									<Text Text="请询问手提电话号码并登记." Id="9" />
+								</Row>
+							</Language>
+						</Data>
+					</Control>
+				</Document>
+				<Document ToolType="Document" ToolId="Document" UID="2"
+					GroupBy="1" Name="TM Receipt" Unit="px" Orientation="LeftToRight"
+					Width="514" Height="480" Margin-left="5" Margin-right="5"
+					Margin-top="5" Margin-bottom="5" Description="TM" DocumentType="16"
+					DeviceType="9" Layout="Portrait" WorkinAreaWidth="504" UIZoom="100"
+					DeviceName="Epson40" CharacterMaximum="40" Id="999" TemplateLineId="1">
+					<Control IsPosObjectGlobal="1" ToolType="TextEditor_Rows"
+						ToolId="PromotionLevel" UID="8" IsPosUseGlobalFields="0" Position="Relative"
+						Width="100" Height="40" Top="5" Left="5" VAlign="Top" HAlign="Left"
+						Margin-left="0" Margin-right="0" Margin-top="0" Margin-bottom="0"
+						Border-Left-Width="0" Border-Left-Color="000000" Border-Top-Width="0"
+						Border-Top-Color="000000" Border-Right-Width="0"
+						Border-Right-Color="000000" Border-Bottom-Width="0"
+						Border-Bottom-Color="000000" UISelected="1" Id="2">
+						<Data Id="3">
+							<Language Id="English">
+								<Row Font="1" FontSize="42" Align="Left" Id="4">
+									<Text Text="        " Id="5" />
+								</Row>
+								<Row Font="1" FontSize="42" Align="Left" Id="6">
+									<Text Text="本月是您的生日月，持屈臣氏卡到屈臣氏" Id="7" />
+								</Row>
+								<Row Font="1" FontSize="42" Align="Left" Id="8">
+									<Text Text="消费，即可享受基本积分双倍的优惠" Id="9" />
+								</Row>
+							</Language>
+						</Data>
+					</Control>
+				</Document>
+				<Document ToolType="Document" ToolId="Document" UID="2"
+					GroupBy="1" Name="TM Receipt" Unit="px" Orientation="LeftToRight"
+					Width="510" Height="480" Margin-left="5" Margin-right="5"
+					Margin-top="5" Margin-bottom="5" DocumentType="16" Description="TM Receipt"
+					DeviceType="9" Layout="Portrait" WorkinAreaWidth="504" UIZoom="100"
+					DeviceName="Epson40" CharacterMaximum="40" Id="3001"
+					TemplateLineId="1">
+					<Control IsPosObjectGlobal="1" ToolType="TextEditor_Rows"
+						ToolId="PromotionLevel" UID="3" IsPosUseGlobalFields="0" Position="Relative"
+						Width="100" Height="40" Top="5" Left="5" VAlign="Top" HAlign="Left"
+						Margin-left="0" Margin-right="0" Margin-top="0" Margin-bottom="0"
+						Border-Left-Width="0" Border-Left-Color="000000" Border-Top-Width="0"
+						Border-Top-Color="000000" Border-Right-Width="0"
+						Border-Right-Color="000000" Border-Bottom-Width="0"
+						Border-Bottom-Color="000000" UISelected="1" Id="2">
+						<Data Id="3">
+							<Language Id="English">
+								<Row Font="1" FontSize="42" Align="Left" Id="4">
+									<Text Text="Text: 请扫描以下二维码 " Id="5" />
+								</Row>
+								<Row Font="1" FontSize="42" Align="Left" Id="6">
+									<Text Text="QR: 100078900  " Id="7" />
+								</Row>
+							</Language>
+						</Data>
+					</Control>
+				</Document>
+				<Document ToolType="Document" ToolId="Document" UID="2"
+					GroupBy="1" Name="TM Receipt" Unit="px" Orientation="LeftToRight"
+					Width="510" Height="480" Margin-left="5" Margin-right="5"
+					Margin-top="5" Margin-bottom="5" DocumentType="16" Description="TM Receipt"
+					DeviceType="9" Layout="Portrait" WorkinAreaWidth="504" UIZoom="100"
+					DeviceName="Epson40" CharacterMaximum="40" Id="3002"
+					TemplateLineId="1">
+					<Control IsPosObjectGlobal="1" ToolType="TextEditor_Rows"
+						ToolId="PromotionLevel" UID="3" IsPosUseGlobalFields="0" Position="Relative"
+						Width="100" Height="40" Top="5" Left="5" VAlign="Top" HAlign="Left"
+						Margin-left="0" Margin-right="0" Margin-top="0" Margin-bottom="0"
+						Border-Left-Width="0" Border-Left-Color="000000" Border-Top-Width="0"
+						Border-Top-Color="000000" Border-Right-Width="0"
+						Border-Right-Color="000000" Border-Bottom-Width="0"
+						Border-Bottom-Color="000000" UISelected="1" Id="2">
+						<Data Id="3">
+							<Language Id="English">
+								<Row Font="1" FontSize="42" Align="Left" Id="4">
+									<Text Text="Text: 请扫描以下二维码 " Id="5" />
+								</Row>
+								<Row Font="1" FontSize="42" Align="Left" Id="6">
+									<Text Text="QR: www.watsons.com.cn" Id="7" />
+								</Row>
+							</Language>
+						</Data>
+					</Control>
+				</Document>
+				<Document ToolType="Document" ToolId="Document" UID="2"
+					GroupBy="1" Name="TM Receipt" Unit="px" Orientation="LeftToRight"
+					Width="510" Height="480" Margin-left="5" Margin-right="5"
+					Margin-top="5" Margin-bottom="5" DocumentType="16" Description="TM Receipt"
+					DeviceType="9" Layout="Portrait" WorkinAreaWidth="504" UIZoom="100"
+					DeviceName="Epson40" CharacterMaximum="40" Id="3003"
+					TemplateLineId="1">
+					<Control IsPosObjectGlobal="1" ToolType="TextEditor_Rows"
+						ToolId="PromotionLevel" UID="3" IsPosUseGlobalFields="0" Position="Relative"
+						Width="100" Height="40" Top="5" Left="5" VAlign="Top" HAlign="Left"
+						Margin-left="0" Margin-right="0" Margin-top="0" Margin-bottom="0"
+						Border-Left-Width="0" Border-Left-Color="000000" Border-Top-Width="0"
+						Border-Top-Color="000000" Border-Right-Width="0"
+						Border-Right-Color="000000" Border-Bottom-Width="0"
+						Border-Bottom-Color="000000" UISelected="1" Id="2">
+						<Data Id="3">
+							<Language Id="English">
+								<Row Font="1" FontSize="42" Align="Left" Id="4">
+									<Text Text="Text: 请扫描以下二维码开具电子发票 " Id="5" />
+								</Row>
+								<Row Font="1" FontSize="42" Align="Left" Id="6">
+									<Text Text="QR:www.watsons.com.cn/? CS|ST|POS|TSN|DT|AMT" Id="7" />
+								</Row>
+							</Language>
+						</Data>
+					</Control>
+				</Document>
+				<Document ToolType="Document" ToolId="Document" UID="2"
+					GroupBy="1" Name="TM Receipt" Unit="px" Orientation="LeftToRight"
+					Width="510" Height="480" Margin-left="5" Margin-right="5"
+					Margin-top="5" Margin-bottom="5" DocumentType="16" Description="TM Receipt"
+					DeviceType="9" Layout="Portrait" WorkinAreaWidth="504" UIZoom="100"
+					DeviceName="Epson40" CharacterMaximum="40" Id="3004"
+					TemplateLineId="1">
+					<Control IsPosObjectGlobal="1" ToolType="TextEditor_Rows"
+						ToolId="PromotionLevel" UID="3" IsPosUseGlobalFields="0" Position="Relative"
+						Width="100" Height="40" Top="5" Left="5" VAlign="Top" HAlign="Left"
+						Margin-left="0" Margin-right="0" Margin-top="0" Margin-bottom="0"
+						Border-Left-Width="0" Border-Left-Color="000000" Border-Top-Width="0"
+						Border-Top-Color="000000" Border-Right-Width="0"
+						Border-Right-Color="000000" Border-Bottom-Width="0"
+						Border-Bottom-Color="000000" UISelected="1" Id="2">
+						<Data Id="3">
+							<Language Id="English">
+								<Row Font="1" FontSize="42" Align="Left" Id="4">
+									<Text Text="Text: 请扫描以下二维码" Id="5" />
+								</Row>
+								<Row Font="1" FontSize="42" Align="Left" Id="6">
+									<Text Text="QRPhoto: ./conf/WTC_logo.bmp " Id="7" />
+								</Row>
+							</Language>
+						</Data>
+					</Control>
+				</Document>
+
+			</Messages>
+		</GeneralTables>
+	</Body>
+	<Footer>
+		<Counter ElementName="Messages" Count="24" />
+	</Footer>
+</REMA_XMLInterface>
+									

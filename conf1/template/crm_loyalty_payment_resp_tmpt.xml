@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template Size="2" Name="Interface" Namespace="Esp" Version="1.0" URL="http://www.mosaicsoftware.com/Postilion/eSocket.POS/" SendOrder="Event,Transaction">
+	<Type Name="Event" 
+		Attributes="TerminalId,
+					EventId,
+					EventData" />
+	<Type Name="Transaction"
+		Attributes="Account,
+					ActionCode,
+					BusinessDate,
+					CardNumber,
+					CardProductName,
+					CurrencyCode,
+					DateTime,
+					ExpiryDate,
+					MerchantId,
+					MessageReasonCode,
+					PanEntryMode,
+					PosCondition,
+					PrivateData,
+					ResponseCode,
+					RetrievalRefNr,
+					TerminalId,
+					TransactionAmount,
+					TransactionId,
+					Type">
+		<Type Name="PosStructuredData" Attributes="Name,Value">
+			<Options
+				Name="Country,Formula" />
+		</Type>
+	</Type>
+</Template>

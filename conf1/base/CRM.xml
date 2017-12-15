@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="ESocket4CRMOperation" class="org.tap.operation.crm.ESocket4CRMOperation">
+		<constructor-arg index="0" ref="XmlConfigurer" />
+		<property name="interceptors">
+			<list>
+				<ref bean="LoyaltyInfoMessageInterceptor" />
+			</list>
+		</property>
+		<property name="transactionDataOperation" ref="TransactionDataOperation2"></property>
+		<property name="printVC"  value="${FF.VATPrinter.isPrintVC}"></property>
+		<property name="prefixEcardMax" value="${FF.Ecard.Server.prefix.max}"></property>
+		<property name="prefixEcardMin" value="${FF.Ecard.Server.prefix.min}"></property>
+		
+		<!-- if ecard config not setting ,is close ecard function -->
+		<property name="eCardConfig"  ref="ECardConfig"></property>
+		<property name="ecardConfigFile"   value="./conf/EFTGateway.properties"></property>
+		<property name="ecardFile"   value="${FF.ECard.Server.checkQRCode.savePath}"></property>
+	</bean>
+	
+	<bean id="ECardConfig" class="org.tap.operation.crm.ECardConfig">
+		<property name="appIdCouponCenter"  value="${FF.ECard.Server.appIdCouponCenter}"></property>
+		<property name="certiIdCouponCenter"  value="${FF.ECard.Server.certiIdCouponCenter}"></property>
+		
+		<property name="checkQRCodeUrl"  value="${FF.ECard.Server.checkQRCodeUrl}"></property>
+		<property name="newEcardFromPOSURL"  value="${FF.ECard.Server.newEcardFromPOSURL}"></property>
+		<property name="newCheckQRCodeUrl"  value="${FF.ECard.Server.newCheckQRCodeUrl}"></property>
+		
+		<property name="appId"  value="${FF.ECard.Server.appId}"></property>
+		<property name="certiId"  value="${FF.ECard.Server.certiId}"></property>
+		
+		<property name="retryCount"  value="${FF.ECard.Server.retryCount}"></property>
+		<property name="interval"  value="${FF.ECard.Server.interval}"></property>
+		<property name="sendFaileFilePath"  value="${FF.ECard.Server.sendFaileFilePath}"></property>
+	</bean>
+	
+	<bean id="XmlConfigurer" class="org.tap.operation.crm.util.XmlConfigurer">
+		<constructor-arg
+			value=".\lib\peripherals\printer\conf\printerTemplateConfig.xml" />
+		<property name="url"  value="${FF.ESocket.Server.url}"></property>
+		<property name="port"  value="${FF.ESocket.Server.port}"></property>
+		<property name="timeout"  value="60"></property>
+		<property name="failToRetry"  value="true"></property>
+		<property name="retryCount"  value="3"></property>
+		<property name="retryInterval"  value="10"></property>
+	</bean>
+	
+	<bean id="LoyaltyInfoMessageInterceptor" class="org.tap.operation.crm.support.LoyaltyInfoMessageInterceptor">
+		<constructor-arg ref="XmlConfigurer" />
+	</bean>
+	
+	<bean id="TransactionDataOperation2" class="org.tap.operation.txndata.TransactionDataOperation">
+		<constructor-arg index="0" ref="TCPAccessOperation2"></constructor-arg>
+		<property name="txnInfoFile" value="./data/vcNumber.txt"></property>
+		<property name="uploadFailPath" value="${FF.Payment.miya.uploadFailPath}"></property>
+	</bean>
+	
+	<bean id="TCPAccessOperation2" class="org.tap.communication.tcp.client.TCPAccessOperation">
+		<constructor-arg index="0" ref="readLogicbcd1"></constructor-arg>
+		<constructor-arg index="1" ref="writeLogicbcd1"></constructor-arg>
+		<property name="host" value="${FF.client.uploadFile.url}"></property>
+		<property name="port" value="${FF.client.uploadFile.port}"></property>
+		<property name="timeout" value="60000"></property>
+	</bean>
+	
+	<bean id="readLogicbcd1" class="org.tap.communication.logic.BCDLengthReadLogic"></bean>
+
+	<bean id="writeLogicbcd1" class="org.tap.communication.logic.BCDLengthWriteLogic"></bean>
+
+</beans>
+

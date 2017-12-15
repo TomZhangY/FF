@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>./conf/EFTGateway.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ScannerPluginServer" class="org.tap.server.scanner.plugin.ScannerPluginServer">
+		<property name="version" value="ScannerPluginServer 3.4.0"></property>
+		<constructor-arg index="0" ref="ScannerManagement"></constructor-arg>
+		<constructor-arg index="1" value="${FF.Payment.miya.ScannerPluginActive}"></constructor-arg>
+	</bean>
+
+	<bean id="ScannerManagement" class="org.tap.server.scanner.plugin.ScannerManagement">
+		<constructor-arg index="0" ref="POSSerialPort"></constructor-arg>
+		<constructor-arg index="1" ref="FFSerialPort"></constructor-arg>
+		<constructor-arg index="2" ref="ScannerOpos"></constructor-arg>
+	</bean>
+
+	<bean id="POSSerialPort"
+		class="com.tap.peripheralsframework.support.serialport.SerialPort">
+		<constructor-arg ref="POSSerialPortConfiguration"></constructor-arg>
+	</bean>
+
+	<bean id="POSSerialPortConfiguration"
+		class="com.tap.peripheralsframework.support.serialport.SerialPortConfiguration">
+		<property name="port" value="${FF.Payment.Scanner.pos.port}"></property>
+		<property name="sentBreak" value="100"></property>
+		<property name="notifyOnDSR" value="false"></property>
+		<property name="receiveTimeout" value="600000000"></property>
+	</bean>
+
+	<bean id="FFSerialPort"
+		class="com.tap.peripheralsframework.support.serialport.SerialPort">
+		<constructor-arg ref="FFSerialPortConfiguration"></constructor-arg>
+	</bean>
+
+	<bean id="FFSerialPortConfiguration"
+		class="com.tap.peripheralsframework.support.serialport.SerialPortConfiguration">
+		<property name="port" value="${FF.Payment.Scanner.ff.port}"></property>
+		<property name="sentBreak" value="100"></property>
+		<property name="notifyOnDSR" value="false"></property>
+		<property name="receiveTimeout" value="600000000"></property>
+	</bean>
+
+	<bean id="ScannerOpos" class="org.tap.peripherals.support.scanner.opos.ScannerOpos">
+		<constructor-arg ref="SCannerConfigurable"></constructor-arg>
+	</bean>
+
+	<bean id="SCannerConfigurable"
+		class="org.tap.peripherals.support.scanner.opos.SCannerConfigurable">
+	</bean>
+
+</beans>

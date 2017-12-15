@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template Size="2" Name="EdgePOSTask" Namespace="" Version="1.0" URL="http://www.w3.org/2001/XMLSchema-instance" SendOrder="Ticket">
+	<Type Name="Ticket"
+		Attributes="Language,
+					Time,
+					Description,
+					BusinessName,
+					Type,
+					Action">
+		<Type Name="Props">		
+			<Type Name="Prop" Attributes="Name,Value">
+				<Options Name="ResultCode" />
+				<Options Name="ResultCodeDesc" />
+				<Options Name="CardID" />
+				<Options Name="EValue" />
+				<Options Name="Expiry_Date" />
+				<Options Name="Loyalty_Counter" />
+				<Options Name="TXN_Device_ID"/>
+				<Options Name="TXN_Date_Time"/>
+				<Options Name="EV_Before_TXN"/>
+				<Options Name="EV_After_TXN"/>
+				<Options Name="TXN_SNum"/>
+				<Options Name="TXN_AMT"/>
+			</Type>
+		</Type>
+	</Type>
+</Template>

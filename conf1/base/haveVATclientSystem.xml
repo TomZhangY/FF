@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- 三个listener -->
+	<import resource="scoCommunication.xml" />
+	<import resource="communication.xml" />
+	<import resource="vatCommunication.xml" />
+	<import resource="invoiceCommunication.xml" />
+	
+<!-- 键盘模式 -->
+	<import resource="keyboardhookServer.xml" />
+<!-- 	定时任务 -->
+	<import resource="schedul.xml" />
+
+	<bean id="propertyConfigurer1"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>./conf/EFTGateway.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="alipayServer" class="org.tap.server.communication.CommunicationServer">
+		<property name="version" value="3.4.0"></property>
+		<constructor-arg index="0" ref="communicationManagement"></constructor-arg>
+	</bean>
+
+	<bean id="communicationManagement" class="org.tap.communication.CommunicationManagement">
+		<property name="listeners">
+			<array>
+				<ref bean="tcpListener" />
+				<ref bean="vatTcpListener" />
+				<ref bean="invoiceTcpListener" />
+				<ref bean="scotcpListener" />
+			</array>
+		</property>
+	</bean>
+	
+
+</beans>
+

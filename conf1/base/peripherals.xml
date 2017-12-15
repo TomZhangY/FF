@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 	<import resource="peripherals_printer.xml"/> -->
+<import resource="peripherals_printer_txt.xml"/>
+	
+	<import resource="peripherals_JinJis100U.xml"/>
+	
+	<bean id="PeripheralsManagement" class="com.tap.peripheralsframework.PeripheralsManagement">
+		<property name="peripherals">
+			<list>
+				<ref bean="OPOSPrinter" />
+				<ref bean="JinJiS100U" />
+			</list>
+		</property>
+	</bean>
+	
+</beans>
+

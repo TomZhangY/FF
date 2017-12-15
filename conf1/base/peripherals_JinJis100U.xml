@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="JinJiS100U"
+		class="org.tap.peripheralsframework.taxcontrol.jinji.JinJiS100U">
+		<constructor-arg index="0" ref="SerialPort" />
+		<constructor-arg index="1"
+			value="#{ S100UXmlConfiguration.jinJiS100UConfigurer }" />
+	</bean>
+
+	<bean id="S100UXmlConfiguration"
+		class="org.tap.peripheralsframework.taxcontrol.jinji.S100UXmlConfiguration" />
+
+	<bean id="SerialPort"
+		class="com.tap.peripheralsframework.support.serialport.SerialPort">
+		<constructor-arg value="#{ S100UXmlConfiguration.serialPortConfiguration }" />
+	</bean>
+
+</beans>
+

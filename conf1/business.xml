@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<import resource="base/peripherals_scanner.xml" />
+	<import resource="base/FSCommunication.xml" />
+	<import resource="base/cupA8.xml"/>
+	
+	<bean id="propertyConfigurer1"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>./conf/EFTGateway.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="EFTPayment" scope="singleton" class="org.tap.ff.payment.EFTControl">
+		<constructor-arg  index="0" value="./conf/EFTGateway.properties"></constructor-arg>
+		<property name="cupEFT" ref="cupPayment" ></property>
+		<property name="miyaEFT" ref="miyaPayment"></property>
+		<property name="timeout" value="${FF.EFTControl.TransactionTypeDialog.timeout}"></property>
+	</bean>
+	
+	<bean id="miyaPayment" scope="singleton" class="org.tap.ff.payment.miya.MiYaEFT">
+ 	 	<constructor-arg index="0" ref="TxnDataInfo"></constructor-arg>
+ 	 	<constructor-arg index="1" value="./conf/EFTGateway.properties"></constructor-arg>
+		
+		<property name="timeout" value="80"></property>
+		<property name="keyboard" value="${FF.Payment.miya.isKeyboard}"></property>
+		<property name="scanningMode" value="${FF.Payment.miya.ScanningMode}"></property>
+		<property name="scanningModeRefund" value="${FF.Payment.miya.scanningModeRefund}"></property>
+		
+		<property name="scannerPluginActive" value="${FF.Payment.miya.ScannerPluginActive}"></property>
+		<property name="comScanInput" value="${FF.Payment.miya.ComScannerInput}"></property>
+		<property name="virtualCom" value="${FF.Payment.miya.ComScannerInput.virtualCom}"></property>
+		<property name="oposScanInput" value="${FF.Payment.miya.OPOSScannerInput}"></property>
+		<property name="tranDataOperation" ref="TransactionDataOperation"></property>
+		<property name="serialPort"  ref="SerialPort"></property>
+	</bean>
+
+	<bean id="TxnDataInfo" class="org.tap.ff.payment.miya.TxnDataInfoImpl">
+		<constructor-arg index="0" value="${FF.Payment.miya.goodsInfo.filePath}"></constructor-arg>
+		<property name="txnNoPrefix" value="${FF.Payment.miya.TxnNo.Prefix}"></property>
+	</bean>
+	
+	<bean id="TransactionDataOperation" class="org.tap.operation.txndata.TransactionDataOperation">
+		<constructor-arg index="0" ref="TCPAccessOperation"></constructor-arg>
+		<property name="txnInfoFile" value="${FF.Payment.miya.TxnFilePath}"></property>
+		<property name="uploadFailPath" value="${FF.Payment.miya.uploadFailPath}"></property>
+		<property name="printMiya" value="${FF.VATPrinter.isPrinterMiYa}"></property>
+	</bean>
+
+</beans>
+

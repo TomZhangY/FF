@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="cupPayment" class="org.tap.ff.payment.cupA8.CUPA8EFT" >
+		<constructor-arg index="0" value="./conf/unionpay.properties"></constructor-arg>
+		<constructor-arg index="1" value="${FF.CUPA8EFT.PrintUrl.Model}"></constructor-arg>
+		<constructor-arg index="2" ref="printButton"></constructor-arg>
+		<property name="keyboard" value="false"></property>
+		<property name="timeout" value="${FF.CUPA8EFT.InputInvoiceDialog.timeout}"></property>
+		<property name="tranDataOperation" ref="TransactionDataOperation_A8"></property>
+		<property name="cupPayitemDetail" ref="itemXML1"></property>
+		<property name="printQrCodeUrl" ref="printQrCode"></property>
+	</bean>
+	
+	<bean id="printQrCode" class="org.tap.ff.payment.cupA8.PrintQrCodeUrl">
+		<property name="qrCodeUrlFoot" value="${FF.VATPrinter.lastTicketFilePath}"></property>
+		<property name="bitLength" value="${FF.PrintQrCodeUrl.PrintUrl.bitLength}"></property>
+		<property name="ENCODING" value="${FF.PrintQrCodeUrl.PrintUrl.ENCODING}"></property>
+		<property name="password" value="${FF.PrintQrCodeUrl.PrintUrl.password}"></property>
+		<property name="qrCodeUrlHead" value="${FF.PrintQrCodeUrl.PrintUrl.url}"></property>
+	</bean>
+	
+	<bean id="itemXML1" class="org.tap.ff.payment.iteminfo.ItemXMLConfig">
+		<constructor-arg index="0" value="${FF.ItemXMLConfig.UnionA8.payment.itemXml}"></constructor-arg>
+		<constructor-arg index="1" value="${FF.ItemXMLConfig.UnionA8.payment.ids}"></constructor-arg>
+	</bean>
+	
+	<bean id="itemXML2" class="org.tap.ff.payment.iteminfo.TargetMessageItemXMLConfig">
+		<constructor-arg index="0" value="${FF.ItemXMLConfig.UnionA8.payment.itemXml}"></constructor-arg>
+	</bean>
+	
+<!--configfile:按钮样式      printdatafile:打印的url数据    url加密参数: bitLength 默认字节长度  ENCODING 编码格式   password 密码-->
+	<bean id="printButton" class="org.tap.ff.payment.cupA8.PrintButton">
+		<property name="xx" value="${Button.xx}"></property>
+		<property name="yy" value="${Button.yy}"></property>
+		<property name="Bwidth" value="${Button.width}"></property>
+		<property name="Bheight" value="${Button.height}"></property>
+		<property name="butText" value="${Button.butText}"></property>
+		<property name="fcolor1" value="${Button.fcolor1}"></property>
+		<property name="fcolor2" value="${Button.fcolor2}"></property>
+		<property name="fcolor3" value="${Button.fcolor3}"></property>
+		<property name="bcolor1" value="${Button.bcolor1}"></property>
+		<property name="bcolor2" value="${Button.bcolor2}"></property>
+		<property name="bcolor3" value="${Button.bcolor3}"></property>
+	</bean>
+	
+	<bean id="TransactionDataOperation_A8" class="org.tap.operation.txndata.TransactionDataOperation">
+		<constructor-arg index="0" ref="TCPAccessOperation"></constructor-arg>
+		<property name="txnInfoFile" value="${FF.Payment.A8.TxnFilePath}"></property>
+		<property name="uploadFailPath" value="${FF.Payment.miya.uploadFailPath}"></property>
+		<property name="printMiya" value="${FF.VATPrinter.isPrinterMiYa}"></property>
+	</bean>
+
+</beans>
+

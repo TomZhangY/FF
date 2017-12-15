@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<EdgePOSTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	noNamespaceSchemaLocation="ticket.xsd">
+	<Ticket Type="Request" Action="GetPrintPageCount" Language="EN"
+		Time="2016-11-29 20:49:29" Description="LoyaltyModule">
+		<Props>
+			<Prop Key="" Value="" />
+		</Props>
+		<Print TxnId="34" TxnDate="2016/11/29" TxnTime="20:49:01"
+			TicketId="" Amount="1800" Quanlity="2" Promotion="-600" Discount="0"
+			GUID="" Istrainning="False" RefundTicket="0" RecallTicket="0"
+			SaveTicket="0" VoidTicket="0" Status="1" SecurityCode="12341277aasdww"
+			IsBalance="0" IsVoided="0" IsRefund="0" Remark="" IsExport="0"
+			SupervisorID="" SupervisorName="" KeytotalAmount="" SchemeNo=""
+			LoyaltyInfoXml="" TargetMessage="" PageTotalNo="" ReprintCount="0"
+			PageStart="" PageEnd="" IsReady="false" VATAmount="0">
+			<Casher Code="9631" Name="卓月红/41139631" Telephone="" Remark="" />
+			<Customer Code="" Name="" Telephone="" Membercard="" Sex=""
+				FirstName="" LastName="" Age="0" DateOfBirth="" />
+			<Machine Code="2" Description="" />
+			<Store Code="1444"
+				Description="保护环境,乐用环保购物袋^顾客服务热线:800-900-1380^请在购物日起一个月内，凭小票开具发票^货品质量问题,八天内退货,十六天内更换^凡持购物卡/礼券购买商品金额部分不作报销^"
+				Address="Watson's^^广州五月花广场分店^广州中山五路五月花广场^" Telephone="" Postcode="" />
+			<Items>
+				<Item Type="LineItem" Code="100646803" Description="悠哈CORORO软糖52克("
+					Price="1200" Quanlity="2" Amount="2400" Barcode="" Voided="0"
+					Subtract="0" Wasvoided="0" IsTax="1" Department="5002"
+					SupervisorID="" SupervisorName="" IconChar="" SalesPersonID="0"
+					SalesPersonName="0" />
+				<Item Type="Promotion" Code="700105144" Description="￥18/2件"
+					Price="0" Quanlity="1" Amount="-600" Barcode="" Discount="-600"
+					Persent="0" Promotion="" Voided="" Subtract="" Wasvoided="" IsTax=""
+					Department="" SupervisorID="" SupervisorName="" IconChar="" />
+			</Items>
+			<Tenders>
+				<Tender Type="Tender" Code="70" Description="支付宝在线" Amount="1800"
+					VoidedTender="" />
+				<Tender Type="Cash" Code="" Description="找赎" Amount="0"
+					IsChanged="True" VoidedTender="" />
+			</Tenders>
+			<Invoice TransType="1" InvoiceCode="" InvoiceNo=""
+				InvoiceSerialNo="" InvoiceEncode="" MachineNo="" RegisterNo="310101607254904"
+				PaymentUnit="个人" OriginalInvoiceCode="" OriginalInvoiceNo=""
+				OriginalInvoiceSerialNo="" OpenInvoicePerson="" OpenInvoiceDate=""
+				ReceptionUnit="上海屈臣氏日用品有限公司" />
+			<InvoiceParts />
+			<TargetMessages>
+				<TargetMessage
+					Description="搜索“屈臣氏中国”下载APP登录即送^200元新人红包，秋冬滋润爆款9元起^还可登陆屈臣氏官网购物： ^www.watsons.com.cn"
+					Location="EndOfTicket" RecMegID="1007" />
+			</TargetMessages>
+		</Print>
+	</Ticket>
+</EdgePOSTask>
+
+
+<?xml version="1.0"?>
+<EdgePOSTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	noNamespaceSchemaLocation="ticket.xsd">
+	<Ticket Type="Request" Action="PrintNormal" Language="EN"
+		Time="2016-11-29 20:49:30" Description="LoyaltyModule">
+		<Props>
+			<Prop Key="" Value="" />
+		</Props>
+		<Print TxnId="34" TxnDate="2016/11/29" TxnTime="20:49:01"
+			TicketId="" Amount="1800" Quanlity="2" Promotion="-600" Discount="0"
+			GUID="" Istrainning="False" RefundTicket="0" RecallTicket="0"
+			SaveTicket="0" VoidTicket="0" Status="1" SecurityCode="12341277aasdww"
+			IsBalance="0" IsVoided="0" IsRefund="0" Remark="" IsExport="0"
+			SupervisorID="" SupervisorName="" KeytotalAmount="" SchemeNo=""
+			LoyaltyInfoXml="" TargetMessage="" PageTotalNo="1" ReprintCount="0"
+			PageStart="1" PageEnd="" IsReady="false" VATAmount="0">
+			<Casher Code="9631" Name="卓月红/41139631" Telephone="" Remark="" />
+			<Customer Code="" Name="" Telephone="" Membercard="" Sex=""
+				FirstName="" LastName="" Age="0" DateOfBirth="" />
+			<Machine Code="2" Description="" />
+			<Store Code="1444"
+				Description="保护环境,乐用环保购物袋^顾客服务热线:800-900-1380^请在购物日起一个月内，凭小票开具发票^货品质量问题,八天内退货,十六天内更换^凡持购物卡/礼券购买商品金额部分不作报销^"
+				Address="Watson's^^广州五月花广场分店^广州中山五路五月花广场^" Telephone="" Postcode="" />
+			<Items>
+				<Item Type="LineItem" Code="100646803" Description="悠哈CORORO软糖52克("
+					Price="1200" Quanlity="2" Amount="2400" Barcode="" Voided="0"
+					Subtract="0" Wasvoided="0" IsTax="1" Department="5002"
+					SupervisorID="" SupervisorName="" IconChar="" SalesPersonID="0"
+					SalesPersonName="0" />
+				<Item Type="Promotion" Code="700105144" Description="￥18/2件"
+					Price="0" Quanlity="1" Amount="-600" Barcode="" Discount="-600"
+					Persent="0" Promotion="" Voided="" Subtract="" Wasvoided="" IsTax=""
+					Department="" SupervisorID="" SupervisorName="" IconChar="" />
+			</Items>
+			<Tenders>
+				<Tender Type="Tender" Code="70" Description="支付宝在线" Amount="1800"
+					VoidedTender="" />
+				<Tender Type="Cash" Code="" Description="找赎" Amount="0"
+					IsChanged="True" VoidedTender="" />
+			</Tenders>
+			<Invoice TransType="1" InvoiceCode="" InvoiceNo=""
+				InvoiceSerialNo="" InvoiceEncode="" MachineNo="" RegisterNo="310101607254904"
+				PaymentUnit="个人" OriginalInvoiceCode="" OriginalInvoiceNo=""
+				OriginalInvoiceSerialNo="" OpenInvoicePerson="" OpenInvoiceDate=""
+				ReceptionUnit="上海屈臣氏日用品有限公司" />
+			<InvoiceParts>
+				<InvoicePart TransType="1" InvoiceCode="" InvoiceEncode=""
+					InvoiceAmount="1800" CancelPrint="0" PageNo="1" />
+			</InvoiceParts>
+			<TargetMessages>
+				<TargetMessage
+					Description="搜索“屈臣氏中国”下载APP登录即送^200元新人红包，秋冬滋润爆款9元起^还可登陆屈臣氏官网购物： ^www.watsons.com.cn"
+					Location="EndOfTicket" RecMegID="1007" />
+			</TargetMessages>
+		</Print>
+	</Ticket>
+</EdgePOSTask>
+
+
+<?xml version="1.0"?>
+<EdgePOSTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	noNamespaceSchemaLocation="ticket.xsd">
+	<Ticket Type="Request" Action="GetPrintPageCount" Language="EN"
+		Time="2017-01-25 15:48:45" Description="LoyaltyModule">
+		<Props>
+			<Prop Key="" Value="" />
+		</Props>
+		<Print TxnId="29" TxnDate="2017/01/25" TxnTime="15:47:53"
+			TicketId="" Amount="3500" Quanlity="1" Promotion="0" Discount="0"
+			GUID="" Istrainning="False" RefundTicket="0" RecallTicket="0"
+			SaveTicket="0" VoidTicket="0" Status="1" SecurityCode="12341277aasdww"
+			IsBalance="0" IsVoided="0" IsRefund="0" Remark="" IsExport="0"
+			SupervisorID="" SupervisorName="" KeytotalAmount="" SchemeNo=""
+			LoyaltyInfoXml="" TargetMessage="" PageTotalNo="" ReprintCount="0"
+			PageStart="" PageEnd="" IsReady="false" VATAmount="3490">
+			<Casher Code="1" Name="VEI" Telephone="" Remark="" />
+			<Customer Code="" Name="" Telephone="" Membercard="" Sex=""
+				FirstName="" LastName="" Age="0" DateOfBirth="" />
+			<Machine Code="3" Description="" />
+			<Store Code="1000"
+				Description="保护环境,乐用环保购物袋^顾客服务热线:800-900-1380^货品质量问题,八天内退货,十六天内更换^^"
+				Address="Watson's^^环球广场分店^广州市环球广场首层^" Telephone="" Postcode="" />
+			<Items>
+				<Item Type="LineItem" Code="100644002" Description="屈臣氏乳木果橄榄盈袬"
+					Price="3500" Quanlity="1" Amount="3500" Barcode="" Voided="0"
+					Subtract="0" Wasvoided="0" IsTax="1" Department="2006"
+					SupervisorID="" SupervisorName="" IconChar="" SalesPersonID="0"
+					SalesPersonName="0" ItemMessage="00000000000012312321" />
+			</Items>
+			<Tenders>
+				<Tender Type="Credit" Code="6" Description="VISA" Amount="3480"
+					BankName="" BankId="" DateTime="" ExpiryDate="0000"
+					ReferenceNumber="" TraceNumber="" AuthorizationNumber=""
+					CardNumber="0" BatchNumber="" VoidedTender="" />
+				<Tender Type="Tender" Code="71" Description="微信" Amount="10"
+					VoidedTender="" />
+				<Tender Type="Cash" Code="1" Description="人民币" Amount="10"
+					IsChanged="False" VoidedTender="" />
+				<Tender Type="Cash" Code="" Description="找赎" Amount="0"
+					IsChanged="True" VoidedTender="" />
+			</Tenders>
+			<Invoice TransType="1" InvoiceCode="" InvoiceNo=""
+				InvoiceSerialNo="" InvoiceEncode="" MachineNo="" RegisterNo="310101607254904"
+				PaymentUnit="个人" OriginalInvoiceCode="" OriginalInvoiceNo=""
+				OriginalInvoiceSerialNo="" OpenInvoicePerson="" OpenInvoiceDate=""
+				ReceptionUnit="上海屈臣氏日用品有限公司" />
+			<InvoiceParts />
+			<TargetMessages />
+		</Print>
+	</Ticket>
+</EdgePOSTask>
+
+<?xml version="1.0"?>
+<EdgePOSTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	noNamespaceSchemaLocation="ticket.xsd">
+	<Ticket Type="Request" Action="PrintNormal" Language="EN"
+		Time="2017-01-25 15:48:45" Description="LoyaltyModule">
+		<Props>
+			<Prop Key="" Value="" />
+		</Props>
+		<Print TxnId="4" TxnDate="2017/01/25" TxnTime="15:47:53"
+			TicketId="" Amount="3500" Quanlity="1" Promotion="0" Discount="0"
+			GUID="" Istrainning="False" RefundTicket="0" RecallTicket="0"
+			SaveTicket="0" VoidTicket="0" Status="1" SecurityCode="12341277aasdww"
+			IsBalance="0" IsVoided="0" IsRefund="0" Remark="" IsExport="0"
+			SupervisorID="" SupervisorName="" KeytotalAmount="" SchemeNo=""
+			LoyaltyInfoXml="" TargetMessage="" PageTotalNo="1" ReprintCount="0"
+			PageStart="1" PageEnd="1" IsReady="false" VATAmount="3490">
+			<Casher Code="1" Name="VEI" Telephone="" Remark="" />
+			<Customer Code="" Name="" Telephone="" Membercard="" Sex=""
+				FirstName="" LastName="" Age="0" DateOfBirth="" />
+			<Machine Code="3" Description="" />
+			<Store Code="1000"
+				Description="保护环境,乐用环保购物袋^顾客服务热线:800-900-1380^货品质量问题,八天内退货,十六天内更换^^"
+				Address="Watson's^^环球广场分店^广州市环球广场首层^" Telephone="" Postcode="" />
+			<Items>
+				<Item Type="LineItem" Code="100644002" Description="屈臣氏乳木果橄榄盈袬"
+					Price="3500" Quanlity="1" Amount="3500" Barcode="" Voided="0"
+					Subtract="0" Wasvoided="0" IsTax="1" Department="2006"
+					SupervisorID="" SupervisorName="" IconChar="" SalesPersonID="0"
+					SalesPersonName="0" ItemMessage="00000000000012312321" />
+			</Items>
+			<Tenders>
+				<Tender Type="Credit" Code="6" Description="VISA" Amount="3480"
+					BankName="" BankId="" DateTime="" ExpiryDate="0000"
+					ReferenceNumber="" TraceNumber="" AuthorizationNumber=""
+					CardNumber="0" BatchNumber="" VoidedTender="" />
+				<Tender Type="Tender" Code="71" Description="微信" Amount="10"
+					VoidedTender="" />
+				<Tender Type="Tender" Code="70" Description="支付bao" Amount="10"
+					VoidedTender="" />
+				<Tender Type="Cash" Code="1" Description="人民币" Amount="10"
+					IsChanged="False" VoidedTender="" />
+				<Tender Type="Cash" Code="" Description="找赎" Amount="0"
+					IsChanged="True" VoidedTender="" />
+			</Tenders>
+			<Invoice TransType="1" InvoiceCode="123456788888" InvoiceNo=""
+				InvoiceSerialNo="" InvoiceEncode="22334347" MachineNo=""
+				RegisterNo="310101607254904" PaymentUnit="个人" OriginalInvoiceCode=""
+				OriginalInvoiceNo="" OriginalInvoiceSerialNo="" OpenInvoicePerson=""
+				OpenInvoiceDate="" ReceptionUnit="上海屈臣氏日用品有限公司" />
+			<InvoiceParts>
+				<InvoicePart TransType="1" InvoiceCode="123456788888"
+					InvoiceEncode="22334347" InvoiceAmount="3500" CancelPrint="0"
+					PageNo="1" />
+			</InvoiceParts>
+			<TargetMessages />
+		</Print>
+	</Ticket>
+</EdgePOSTask>
+
+<?xml version="1.0"?>
+<EdgePOSTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	noNamespaceSchemaLocation="ticket.xsd">
+	<Ticket Type="Request" Action="PrintNormal" Language="EN"
+		Time="2017-02-13 11:26:16" Description="LoyaltyModule">
+		<Props>
+			<Prop Key="" Value="" />
+		</Props>
+		<Print TxnId="71" TxnDate="2017/02/13" TxnTime="11:04:35"
+			TicketId="" Amount="30" Quanlity="3" Promotion="0" Discount="0" GUID=""
+			Istrainning="False" RefundTicket="0" RecallTicket="0" SaveTicket="0"
+			VoidTicket="0" Status="1" SecurityCode="12341277aasdww" IsBalance="0"
+			IsVoided="0" IsRefund="0" Remark="" IsExport="0" SupervisorID=""
+			SupervisorName="" KeytotalAmount="" SchemeNo="" LoyaltyInfoXml=""
+			TargetMessage="" PageTotalNo="1" ReprintCount="0" PageStart="1"
+			PageEnd="" IsReady="false" VATAmount="30">
+			<Casher Code="1" Name="VEI" Telephone="" Remark="" />
+			<Customer Code="" Name="" Telephone="" Membercard="" Sex=""
+				FirstName="" LastName="" Age="0" DateOfBirth="" />
+			<Machine Code="1" Description="" />
+			<Store Code="1000"
+				Description="保护环境,乐用环保购物袋^顾客服务热线:800-900-1380^货品质量问题,八天内退货,十六天内更换^^"
+				Address="Watson's^^环球广场分店^广州市环球广场首层^" Telephone="" Postcode="" />
+			<Items>
+				<Item Type="LineItem" Code="100105708" Description="绿箭无糖薄荷冰柠薄篅"
+					Price="10" Quanlity="3" Amount="30" Barcode="" Voided="0" Subtract="0"
+					Wasvoided="0" IsTax="1" Department="5002" SupervisorID=""
+					SupervisorName="" IconChar="" SalesPersonID="0" SalesPersonName="0"
+					ItemMessage="" />
+			</Items>
+			<Tenders>
+				<Tender Type="Tender" Code="70" Description="支付宝在线" Amount="10"
+					VoidedTender="" />
+				<Tender Type="Tender" Code="70" Description="支付宝在线" Amount="10"
+					VoidedTender="" />
+				<Tender Type="Cash" Code="1" Description="人民币" Amount="10"
+					IsChanged="False" VoidedTender="" />
+				<Tender Type="Cash" Code="" Description="找赎" Amount="0"
+					IsChanged="True" VoidedTender="" />
+			</Tenders>
+			<Invoice TransType="1" InvoiceCode="" InvoiceNo=""
+				InvoiceSerialNo="" InvoiceEncode="" MachineNo="" RegisterNo="310101607254904"
+				PaymentUnit="个人" OriginalInvoiceCode="" OriginalInvoiceNo=""
+				OriginalInvoiceSerialNo="" OpenInvoicePerson="" OpenInvoiceDate=""
+				ReceptionUnit="上海屈臣氏日用品有限公司" />
+			<InvoiceParts>
+				<InvoicePart TransType="1" InvoiceCode="" InvoiceEncode=""
+					InvoiceAmount="030" CancelPrint="0" PageNo="1" />
+			</InvoiceParts>
+			<TargetMessages />
+		</Print>
+	</Ticket>
+</EdgePOSTask>
+
+<?xml version="1.0"?>
+<EdgePOSTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	noNamespaceSchemaLocation="ticket.xsd">
+	<Ticket Type="Request" Action="PrintToPDF" Language="EN"
+		Time="2016-11-29 20:49:29" Description="LoyaltyModule">
+		<Props>
+			<Prop Key="" Value="" />
+		</Props>
+		<Print TxnId="144" TxnDate="2016/11/29" TxnTime="20:49:01"
+			TicketId="" Amount="1800" Quanlity="2" Promotion="-600" Discount="0"
+			GUID="" Istrainning="False" RefundTicket="0" RecallTicket="0"
+			SaveTicket="0" VoidTicket="0" Status="1" SecurityCode="12341277aasdww"
+			IsBalance="0" IsVoided="0" IsRefund="0" Remark="" IsExport="0"
+			SupervisorID="" SupervisorName="" KeytotalAmount="" SchemeNo=""
+			LoyaltyInfoXml="" TargetMessage="" PageTotalNo="" ReprintCount="0"
+			PageStart="" PageEnd="" IsReady="false" VATAmount="0">
+			<Casher Code="9631" Name="卓月红/41139631" Telephone="" Remark="" />
+			<Customer Code="" Name="" Telephone="" Membercard="" Sex=""
+				FirstName="" LastName="" Age="0" DateOfBirth="" />
+			<Machine Code="2" Description="" />
+			<Store Code="1444"
+				Description="保护环境,乐用环保购物袋^顾客服务热线:800-900-1380^请在购物日起一个月内，凭小票开具发票^货品质量问题,八天内退货,十六天内更换^凡持购物卡/礼券购买商品金额部分不作报销^"
+				Address="Watson's^^广州五月花广场分店^广州中山五路五月花广场^" Telephone="" Postcode="" />
+			<Items>
+				<Item Type="LineItem" Code="100646803" Description="悠哈CORORO软糖52克("
+					Price="1200" Quanlity="2" Amount="2400" Barcode="" Voided="0"
+					Subtract="0" Wasvoided="0" IsTax="1" Department="5002"
+					SupervisorID="" SupervisorName="" IconChar="" SalesPersonID="0"
+					SalesPersonName="0" />
+				<Item Type="Promotion" Code="700105144" Description="￥18/2件"
+					Price="0" Quanlity="1" Amount="-600" Barcode="" Discount="-600"
+					Persent="0" Promotion="" Voided="" Subtract="" Wasvoided="" IsTax=""
+					Department="" SupervisorID="" SupervisorName="" IconChar="" />
+			</Items>
+			<Tenders>
+				<Tender Type="Tender" Code="70" Description="支付宝在线" Amount="1800"
+					VoidedTender="" />
+				<Tender Type="Cash" Code="" Description="找赎" Amount="0"
+					IsChanged="True" VoidedTender="" />
+			</Tenders>
+			<Invoice TransType="1" InvoiceCode="" InvoiceNo=""
+				InvoiceSerialNo="" InvoiceEncode="" MachineNo="" RegisterNo="310101607254904"
+				PaymentUnit="个人" OriginalInvoiceCode="" OriginalInvoiceNo=""
+				OriginalInvoiceSerialNo="" OpenInvoicePerson="" OpenInvoiceDate=""
+				ReceptionUnit="上海屈臣氏日用品有限公司" />
+			<InvoiceParts />
+
+			<LoyaltyInfo Status="0" TransID="60" LoyaltyNumber="991701100000499"  LoyaltyName="Michael.HE"
+				CardNumber="991701100000499" CustomerName="FirstName LastName">
+				<Accounts Balance="2123" Earned="19" OriginalPoint="2124"
+					ID="1000" />
+				<Accounts Balance="910" OriginalPoint="910" ID="1002" />
+				<Accounts Balance="6000" OriginalPoint="6000" ID="1005" />
+				<Accounts Balance="32" OriginalPoint="32" ID="1007" />
+				<Accounts OriginalPoint="0" ID="1006" />
+				<Accounts OriginalPoint="0" ID="1011" />
+				<Accounts Balance="1" OriginalPoint="1" ID="1012" />
+				<Accounts Balance="20" Earned="20" ID="1102" />
+			</LoyaltyInfo>
+			<TargetMessages>
+				<TargetMessage
+					Description="搜索“屈臣氏中国”下载APP登录即送^200元新人红包，秋冬滋润爆款9元起^还可登陆屈臣氏官网购物： ^www.watsons.com.cn"
+					Location="EndOfTicket" RecMegID="1007" />
+			</TargetMessages>
+		</Print>
+	</Ticket>
+</EdgePOSTask>
