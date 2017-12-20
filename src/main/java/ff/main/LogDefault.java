@@ -11,7 +11,6 @@ public class LogDefault {
 	public static void main(String[] args) {
 		// 通过Xml
 		DOMConfigurator.configure(".conf/log4j.xml");
-		
 		// 通过properties
 		PropertyConfigurator.configure("conf/log4j.properties");
 		
