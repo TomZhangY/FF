@@ -36,14 +36,26 @@
 			<artifactId>platform</artifactId>
 			<version>3.4.0</version>
 		</dependency>
-		
+
 		<!-- google生成二维码 -->
 		<dependency>
 			<groupId>com.google.zxing</groupId>
 			<artifactId>core</artifactId>
 			<version>2.1</version>
 		</dependency>
-		
+
+		<!-- Email -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.activation</groupId>
+			<artifactId>activation</artifactId>
+			<version>1.1.1</version>
+		</dependency>
 
 	</dependencies>
 </project>

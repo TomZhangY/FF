@@ -17,7 +17,6 @@ public class Main {
 		}.start();
 		logger.error("123");
 //System.err.println("1");
-
 	}
 	
 }
