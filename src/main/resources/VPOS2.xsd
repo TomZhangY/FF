@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="VPOS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Ticket"/>
+      </xs:sequence>
+      <xs:attribute name="Action" use="required" type="xs:string"/>
+      <xs:attribute name="Description" use="required" type="xs:string"/>
+      <xs:attribute name="PrintFlag" use="required" type="xs:string"/>
+      <xs:attribute name="ResDescription" use="required" type="xs:string"/>
+      <xs:attribute name="ResponseCode" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ticket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Items"/>
+        <xs:element ref="LoyaltyInfo"/>
+      </xs:sequence>
+      <xs:attribute name="DiscountAmount" use="required" type="xs:string"/>
+      <xs:attribute name="MobileNo" use="required" type="xs:string"/>
+      <xs:attribute name="NetTotalAmount" use="required" type="xs:string"/>
+      <xs:attribute name="NonLoyaltySavingAmt" use="required" type="xs:string"/>
+      <xs:attribute name="LoyaltySavingAmt" use="required" type="xs:string"/>
+      <xs:attribute name="O2oTxnNo" use="required" type="xs:string"/>
+      <xs:attribute name="PosID" use="required" type="xs:string"/>
+      <xs:attribute name="StoreID" use="required" type="xs:string"/>
+      <xs:attribute name="TenderCode" use="required" type="xs:string"/>
+      <xs:attribute name="TicketID" use="required" type="xs:string"/>
+      <xs:attribute name="TotalAmount" use="required" type="xs:string"/>
+      <xs:attribute name="TxnNo" use="required" type="xs:string"/>
+      <xs:attribute name="TxnTime" use="required" type="xs:string"/>
+      <xs:attribute name="URL" use="required" type="xs:string"/>
+      <xs:attribute name="ActivationCode" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Items">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Item">
+    <xs:complexType>
+      <xs:attribute name="Amount" use="required" type="xs:string"/>
+      <xs:attribute name="Barcode" use="required"/>
+      <xs:attribute name="Description" use="required"/>
+      <xs:attribute name="Price" use="required" type="xs:string"/>
+      <xs:attribute name="Quantity" use="required" type="xs:string"/>
+      <xs:attribute name="SKU" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoyaltyInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Accounts"/>
+      </xs:sequence>
+      <xs:attribute name="CardNumber" use="required" type="xs:string"/>
+      <xs:attribute name="CustomerName" use="required" type="xs:string"/>
+      <xs:attribute name="LoyaltyNumber" use="required" type="xs:string"/>
+      <xs:attribute name="Status" use="required" type="xs:string"/>
+      <xs:attribute name="TransID" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Accounts">
+    <xs:complexType>
+      <xs:attribute name="Balance" use="required" type="xs:string" />
+      <xs:attribute name="Earned" use="required" type="xs:string"/>
+      <xs:attribute name="ID" use="required" type="xs:string"/>
+      <xs:attribute name="OriginalPoint" use="required" type="xs:string"/>
+      <xs:attribute name="Redeem" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
