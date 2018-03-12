@@ -18,7 +18,7 @@ public class Main {
 		try {
 			context = new FileSystemXmlApplicationContext("conf/system.xml");
 			TCPListener tcp = (TCPListener)context.getBean("tcpListener");
-			tcp.startListener();
+//			tcp.startListener();
 			
 			// jvm 退出时会执行这个线程
 			Runtime.getRuntime().addShutdownHook(

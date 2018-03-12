@@ -176,7 +176,6 @@ public class TCPListener {
 					
 				} catch (SocketTimeoutException e) {
 					logger.error(e);
-					e.printStackTrace();
 					try {
 						Thread.sleep(communicationConfig
 								.getTcpListenerSleepTime());

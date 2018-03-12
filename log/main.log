@@ -1,12 +1,2 @@
-2018-01-11 16:35:44,582 [main] - ff.communication.impl.TCPListener.<init>(TCPListener.java:82) INFO  - Instanced class ff.communication.impl.TCPListener successfully
- 2018-01-11 16:35:44,629 [main] - ff.main.Main.main(Main.java:43) ERROR - 123
- 2018-01-11 16:35:44,629 [Thread-3] - ff.main.Main$2.run(Main.java:40) DEBUG - 我是Tom
- 2018-01-11 16:35:52,583 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:35:57,653 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:36:02,717 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:36:07,782 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:36:12,849 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:36:17,914 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:36:22,979 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
- 2018-01-11 16:36:28,045 [Thread-4] - ff.communication.impl.TCPListener$SocketThread.run(TCPListener.java:178) ERROR - java.net.SocketTimeoutException: Read timed out
+2018-09-30 11:52:24,645 [main] - ff.communication.impl.TCPListener.<init>(TCPListener.java:82) INFO  - Instanced class ff.communication.impl.TCPListener successfully
  

@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	
-	<bean id="tcpListener" class="ff.communication.impl.TCPListener">
+	<bean id="tcpListener" class="ff.communication.impl.TCPListener"  init-method="startListener">
 		<constructor-arg index="0" ref="commConfig"></constructor-arg>
 		<property name="messageEncoding" value="UTF-8"></property>
 		<property name="threadPool" ref="threadPool"></property>

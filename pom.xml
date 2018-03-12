@@ -13,6 +13,18 @@
 	</properties>
 
 	<dependencies>
+	 <dependency>
+      <groupId>org.tap.util</groupId>
+      <artifactId>swing-ext</artifactId>
+      <version>1.0.0</version>
+      <scope>compile</scope>
+      
+    </dependency>
+	    <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>2.9.0</version>
+    </dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -64,6 +76,14 @@
 			<artifactId>activation</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-
+		
+		
+		<!-- Jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.3</version>
+		</dependency>
+	
 	</dependencies>
 </project>
