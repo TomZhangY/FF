@@ -13,15 +13,21 @@ public class ConnectTest {
 //		Session session  = sf.getCurrentSession();
 		try {
 			session.beginTransaction();
-			UserInfo user1 = session.get(UserInfo.class, 1);
+//			UserInfo user1 = session.get(UserInfo.class, 3);
+//			System.out.println(user1.getName());
+//			System.out.println(user1.getGroup().getName());
 //			System.out.println(user1);
-//			UserInfo user = new UserInfo();
-			user1.setAge(22222);
-			user1.setName("tom2");
-//			user.setId(1);
+			UserGroup group = new UserGroup();
+//			group.setId(1);
+			group.setName("tom1");
+//			session.save(group);
+			UserInfo user = new UserInfo();
 //			session.update(user);
-//			session.save(user);
-//			user.setAge(25);
+			
+			user.setSex(1);
+			user.setGroup(group);
+			group.getUserSet().add(user);
+			session.save(group);
 //			session.flush();
 			session.getTransaction().commit();
 		} catch (Exception e) {

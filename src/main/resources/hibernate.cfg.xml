@@ -21,7 +21,7 @@
              create-drop(极少): 无论是否存在表结构.每次启动Hibernate都会重新创建表结构.每次Hibernate运行结束时,删除表结构.
              validate(很少):不会自动创建表结构.也不会自动维护表结构.Hibernate只校验表结构. 如果表结构不一致将会抛出异常.
           -->
-<!--         <property name="hbm2ddl.auto">create</property> -->
+        <property name="hbm2ddl.auto">create</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
         <!-- hibernate.connection.autocommit: 事务自动提交  -->
 <!--         <property name="hibernate.connection.autocommit">true</property> -->
@@ -31,5 +31,6 @@
             填写src之后的路径
          -->
         <mapping resource="UserInfo.hbm.xml"/>
+        <mapping resource="UserGroup.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
