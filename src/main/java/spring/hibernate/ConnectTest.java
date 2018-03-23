@@ -19,13 +19,13 @@ public class ConnectTest {
 //			System.out.println(user1);
 			UserGroup group = new UserGroup();
 //			group.setId(1);
-			group.setName("tom1");
+			group.setName("tom3");
 //			session.save(group);
 			UserInfo user = new UserInfo();
 //			session.update(user);
 			
-			user.setSex(1);
-			user.setGroup(group);
+			user.setSex(3);
+//			user.setGroup(group);
 			group.getUserSet().add(user);
 			session.save(group);
 //			session.flush();

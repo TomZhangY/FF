@@ -21,7 +21,7 @@
             <generator class="native"/>  
         </id>  
         <property name="name" column="name" />  
-        <set name="userSet">
+        <set name="userSet" cascade="save-update">
             <key column="group_id"></key>
             <one-to-many class="spring.hibernate.UserInfo" />
         </set> 

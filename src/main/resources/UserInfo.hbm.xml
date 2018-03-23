@@ -30,7 +30,7 @@
         <version name="version" column="version"/>  
         <property name="name" column="name" />  
         <property name="sex" column="sex" />  
-       	<many-to-one name="group" class="spring.hibernate.UserGroup" column="group_id"  fetch="select"></many-to-one> 
+       	<many-to-one name="group" class="spring.hibernate.UserGroup" column="group_id" cascade="save-update"  fetch="select"></many-to-one> 
     </class>  
       
 </hibernate-mapping>  
